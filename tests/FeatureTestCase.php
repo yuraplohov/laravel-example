@@ -4,13 +4,20 @@ namespace Yuraplohov\LaravelExample\Test;
 
 use Orchestra\Testbench\TestCase;
 
-class FeatureTestCase extends TestCase
+abstract class FeatureTestCase extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
         $this->setUpDatabase();
+    }
+
+    protected function getPackageProviders($app)
+    {
+        return [
+            'Yuraplohov\LaravelExample\Providers\LaravelExampleServiceProvider',
+        ];
     }
 
     protected function getEnvironmentSetUp($app)
@@ -23,15 +30,8 @@ class FeatureTestCase extends TestCase
         ]);
     }
 
-    protected function getPackageProviders($app)
-    {
-        return [
-            'Yuraplohov\LaravelExample\Providers\LaravelExampleServiceProvider',
-        ];
-    }
-
     protected function setUpDatabase()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/2021_11_16_124742_create_items_table.php');
+        $this->artisan('migrate')->run();
     }
 }

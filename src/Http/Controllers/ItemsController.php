@@ -4,7 +4,7 @@ namespace Yuraplohov\LaravelExample\Http\Controllers;
 
 use Yuraplohov\LaravelExample\Models\Item;
 
-class ItemsController extends Controller
+class ItemsController
 {
     public function index()
     {

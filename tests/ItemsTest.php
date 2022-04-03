@@ -4,7 +4,7 @@ namespace Yuraplohov\LaravelExample\Test;
 
 use Yuraplohov\LaravelExample\Models\Item;
 
-class RoutesTest extends FeatureTestCase
+class ItemsTest extends FeatureTestCase
 {
     /** @test */
     public function it_gets_all_items()

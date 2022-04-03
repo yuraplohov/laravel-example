@@ -1,6 +1,6 @@
 {
   "name": "yuraplohov/laravel-example",
-  "description": "Laravel example package",
+  "description": "Laravel package example",
   "license": "MIT",
   "authors": [
     {
@@ -9,8 +9,14 @@
     }
   ],
   "require": {
-    "php": ">=8.1",
-    "illuminate/support": "^8.0"
+    "php": "^8.1",
+    "illuminate/console": "^9.0",
+    "illuminate/database": "^9.0",
+    "illuminate/support": "^9.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.2",
+    "phpunit/phpunit": "^9.5"
   },
   "autoload": {
     "psr-4": {
@@ -22,7 +28,16 @@
       "Yuraplohov\\LaravelExample\\Test\\": "tests/"
     }
   },
-  "require-dev": {
-    "orchestra/testbench": "^6.24"
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Yuraplohov\\LaravelExample\\Providers\\EloquentFilterServiceProvider"
+      ]
+    }
   }
 }

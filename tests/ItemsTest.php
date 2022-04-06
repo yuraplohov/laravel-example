@@ -6,7 +6,9 @@ use Yuraplohov\LaravelExample\Models\Item;
 
 class ItemsTest extends FeatureTestCase
 {
-    /** @test */
+    /**
+     * @test
+     */
     public function it_gets_all_items()
     {
         Item::forceCreate(['name' => 'Name 1']);

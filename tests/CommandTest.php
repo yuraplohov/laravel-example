@@ -11,7 +11,9 @@ class CommandTest extends FeatureTestCase
         $app['config']->set('example.param', 200);
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function it_executes_example_command()
     {
         $output = $this->artisan('example-command');
